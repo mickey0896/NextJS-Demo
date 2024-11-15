@@ -17,7 +17,7 @@ const geistMono = localFont({
 export default function Home() {
   return (
     <>
-     <h1>mix eiei</h1>
+     <h1>หน้าแรกของเว็บไซต์</h1>
     </>
   );
 }
