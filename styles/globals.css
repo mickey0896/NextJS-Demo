@@ -28,11 +28,16 @@ nav .logo {
   margin-right: auto;
   padding-left: 10px;
 }
-footer{
+
+footer {
   display: block;
   text-align: center;
   padding: 10px 0;
   margin-top: 10px;
   color: #777;
   border-top: 1px solid #eaeaea;
+}
+
+a {
+  text-decoration: none;
 }
