@@ -6,7 +6,6 @@ import Link from "next/link";
 export async function getStaticProps() {
     const res = await fetch("https://dummyjson.com/products?limit=12")
     const data = await res.json()
-    console.log(data, 'data');
     return {
         props: { products: data.products }
     }
