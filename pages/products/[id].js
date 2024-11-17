@@ -1,3 +1,7 @@
+import Head from "next/head"
+import Image from "next/image"
+import styles from "@/styles/Detail.module.css"
+
 export async function getStaticPaths() {
     const res = await fetch('https://dummyjson.com/products?limit=12')
     const data = await res.json()
@@ -24,9 +28,23 @@ export async function getStaticProps({ params }) {
 export default function ProductsDetail({ products }) {
     return (
         <>
-            <h1>รหัสสินค้า : {products.id}</h1>
-            <h1>ชื่อ : {products.title}</h1>
-            <h2>ราคา : {products.price} $</h2>
+
+            <Head>
+                <title>{products.title}</title>
+            </Head>
+            <div className={styles.container}>
+                <div>
+                    <Image src={products.thumbnail} width={300} height={300} alt={products.title} />
+                </div>
+                <div className={styles.detail}>
+                    <h1>ชื่อ : {products.title}</h1>
+                    <h2>ราคา : {products.price} $</h2>
+                    <h2>หมวดหมู่ : {products.category}</h2>
+                    <h3>แบรนด์ : {products.brand}</h3>
+                    <h4>ข้อมูลพื้นฐาน : {products.description}</h4>
+                    <h4>คะแนน : {products.rating} / 5</h4>
+                </div>
+            </div>
         </>
     )
 }

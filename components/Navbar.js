@@ -11,7 +11,7 @@ export default function Navbar(){
             </div>
             <Link href='/'>หน้าแรก</Link>
             <Link href='/about'>เกี่ยวกับเรา</Link>
-            <Link href='products'>สินค้าทั้งหมด</Link>
+            <Link href='/products'>สินค้าทั้งหมด</Link>
         </nav>
     )
 }
